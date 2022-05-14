@@ -16,7 +16,7 @@ body {
   position: relative;
   height: 90%;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 6fr 1fr;
+  grid-template-rows: 2fr 1fr;
   row-gap: 5%;
 }
 
@@ -29,10 +29,28 @@ body {
   overflow: hidden;
 }
 
-.img {
+img {
   position: absolute;
   height: 100%;
-  transition: ;
+  transform: translateX(100vw);
+
+}
+
+.animationStart{
+  animation-name: sliderStart;
+  animation-duration: 4s;
+}
+@keyframes sliderStart {
+  0%{transform: translateX(100vw);}
+  100%{transform: translateX(0);}
+}
+.animationEnd{
+  animation-name: sliderEnd;
+  animation-duration: 4s;
+}
+@keyframes sliderEnd {
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-100vw);}
 }
 
 .phrase {
