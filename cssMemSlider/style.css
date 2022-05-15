@@ -16,7 +16,7 @@ body {
   position: relative;
   height: 90%;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 5fr 1fr;
   row-gap: 5%;
 }
 
@@ -31,26 +31,37 @@ body {
 
 img {
   position: absolute;
+  object-fit: contain;
   height: 100%;
-  transform: translateX(100vw);
+  width: 100%;
+  transform: translateX(110vw);
 
 }
 
-.animationStart{
-  animation-name: sliderStart;
-  animation-duration: 4s;
+.startAnimationSlider {
+  animation: sliderStart 2s forwards;
 }
+
 @keyframes sliderStart {
-  0%{transform: translateX(100vw);}
-  100%{transform: translateX(0);}
+  0% {
+    transform: translateX(110vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-.animationEnd{
-  animation-name: sliderEnd;
-  animation-duration: 4s;
+
+.endAnimationSlider {
+  animation: sliderEnd 2s;
 }
+
 @keyframes sliderEnd {
-  0%{transform: translateX(0);}
-  100%{transform: translateX(-100vw);}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-110vw);
+  }
 }
 
 .phrase {
@@ -62,10 +73,38 @@ img {
   position: relative;
 }
 
-.text {
+blockquote {
   margin: 0;
   color: #FFFFFF;
   font-size: 1.1em;
+  position: absolute;
+  opacity: 0;
+}
+
+.startAnimationText {
+  animation: showText 1s forwards;
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.endAnimationText {
+  animation: hiddenText 0.5s;
+}
+
+@keyframes hiddenText {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .controls {
