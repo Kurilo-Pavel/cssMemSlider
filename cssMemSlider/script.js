@@ -22,6 +22,7 @@ for (let i = 0; i < data.length; i++) {
   createField('div', 'circle', '.controlsField' + i);
 }
 
+
 function addData() {
   const image = document.querySelectorAll('.img');
   const text = document.querySelectorAll('.text');
@@ -87,15 +88,25 @@ function outBackground(e) {
   }
 }
 
+function first(i){
+  const circle = document.querySelectorAll('.circle');
+  circle[i].style.background = 'none';
+  const img = document.querySelectorAll('img');
+  img[i].setAttribute('class', 'startAnimationSlider');
+  const text = document.querySelectorAll('blockquote');
+  text[i].setAttribute('class', 'startAnimationText');
+}
+first(0);
+
 //
-// let i = 0
+// let i = data.length-1
 // function slider() {
-//   if (i === data.length) {
-//     i = 0
-//     addData(i)
+//   if (i === -1) {
+//     i = data.length-1
+//     first(i)
 //   } else {
-//     addData(i)
-//     i += 1
+//     first(i)
+//     i -= 1
 //   }
 // }
 //
