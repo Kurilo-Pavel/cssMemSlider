@@ -1,8 +1,6 @@
 "use strict"
 import {data} from './data.js';
 
-// const body = document.querySelector('body');
-
 function createField(tagName, className, parentName) {
   const parent = document.querySelector(parentName)
   const controlsField = document.createElement(tagName);
@@ -22,12 +20,11 @@ for (let i = 0; i < data.length; i++) {
   createField('div', 'circle', '.controlsField' + i);
 }
 
-
 function addData() {
   const image = document.querySelectorAll('.img');
   const text = document.querySelectorAll('.text');
   const circle = document.querySelectorAll('span');
-  for (let i = data.length-1; i >=0 ; i--) {
+  for (let i = data.length - 1; i >= 0; i--) {
     image[i].setAttribute('src', data[i][1]);
     text[i].innerHTML = data[i][0];
     circle[i].setAttribute('value', i);
@@ -66,14 +63,13 @@ circle.forEach(element => element.addEventListener('mouseover', overBackground))
 circle.forEach(element => element.addEventListener('click', start));
 circle.forEach(element => element.addEventListener('mouseout', outBackground));
 
-
 function overBackground(e) {
   const hoverCircle = e.target.closest('span');
   if (hoverCircle) {
     hoverCircle.children[0].style.border = '3px solid white';
-    console.log(hoverCircle.children[0].style.background )
+    console.log(hoverCircle.children[0].style.background);
     if (hoverCircle.children[0].style.background === 'dodgerblue') {
-      hoverCircle.children[0].style.background = 'white'
+      hoverCircle.children[0].style.background = 'white';
     }
   }
 }
@@ -83,12 +79,12 @@ function outBackground(e) {
   if (hoverCircle) {
     hoverCircle.children[0].style.border = '3px solid dodgerblue';
     if (hoverCircle.children[0].style.background === 'white') {
-      hoverCircle.children[0].style.background = 'dodgerblue'
+      hoverCircle.children[0].style.background = 'dodgerblue';
     }
   }
 }
 
-function first(i){
+function first(i) {
   const circle = document.querySelectorAll('.circle');
   circle[i].style.background = 'none';
   const img = document.querySelectorAll('img');
@@ -96,7 +92,8 @@ function first(i){
   const text = document.querySelectorAll('blockquote');
   text[i].setAttribute('class', 'startAnimationText');
 }
-first(0);
+
+first(data.length - 1);
 
 //
 // let i = data.length-1
