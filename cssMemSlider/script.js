@@ -1,7 +1,7 @@
 "use strict"
 import {data} from './data.js';
 
-function createField(tagName, className, parentName) {
+const createField = (tagName, className, parentName) => {
   const parent = document.querySelector(parentName)
   const controlsField = document.createElement(tagName);
   controlsField.setAttribute('class', className);
@@ -20,7 +20,7 @@ for (let i = 0; i < data.length; i++) {
   createField('div', 'circle', '.controlsField' + i);
 }
 
-function addData() {
+const addData = () => {
   const image = document.querySelectorAll('.img');
   const text = document.querySelectorAll('.text');
   const circle = document.querySelectorAll('span');
@@ -32,7 +32,7 @@ function addData() {
   }
 }
 
-function start(e) {
+const start = (e) => {
   const fieldCircle = e.target.closest('span');
   if (fieldCircle) {
     fieldCircle.children[0].style.background = 'none';
@@ -51,30 +51,25 @@ function start(e) {
 
     const text = document.querySelectorAll('blockquote');
     text.forEach(phrase => {
-      phrase.className = phrase.className === 'startAnimationText' ? 'endAnimationText' : null
+      phrase.className = phrase.className === 'startAnimationText' ? 'endAnimationText' : null;
     })
-    text[fieldCircle.getAttribute('value')].setAttribute('class', 'startAnimationText')
+    text[fieldCircle.getAttribute('value')].setAttribute('class', 'startAnimationText');
   }
 }
 
-addData(0);
-const circle = document.querySelectorAll('span');
-circle.forEach(element => element.addEventListener('mouseover', overBackground));
-circle.forEach(element => element.addEventListener('click', start));
-circle.forEach(element => element.addEventListener('mouseout', outBackground));
+addData();
 
-function overBackground(e) {
+const overBackground = (e) => {
   const hoverCircle = e.target.closest('span');
   if (hoverCircle) {
     hoverCircle.children[0].style.border = '3px solid white';
-    console.log(hoverCircle.children[0].style.background);
     if (hoverCircle.children[0].style.background === 'dodgerblue') {
       hoverCircle.children[0].style.background = 'white';
     }
   }
 }
 
-function outBackground(e) {
+const outBackground = (e) => {
   const hoverCircle = e.target.closest('span');
   if (hoverCircle) {
     hoverCircle.children[0].style.border = '3px solid dodgerblue';
@@ -83,8 +78,13 @@ function outBackground(e) {
     }
   }
 }
+const circle = document.querySelectorAll('span');
+circle.forEach(element => element.addEventListener('mouseover', overBackground));
+circle.forEach(element => element.addEventListener('mouseout', outBackground));
+circle.forEach(element => element.addEventListener('click', start));
 
-function first(i) {
+
+const first = (i) => {
   const circle = document.querySelectorAll('.circle');
   circle[i].style.background = 'none';
   const img = document.querySelectorAll('img');
@@ -92,19 +92,4 @@ function first(i) {
   const text = document.querySelectorAll('blockquote');
   text[i].setAttribute('class', 'startAnimationText');
 }
-
-first(data.length - 1);
-
-//
-// let i = data.length-1
-// function slider() {
-//   if (i === -1) {
-//     i = data.length-1
-//     first(i)
-//   } else {
-//     first(i)
-//     i -= 1
-//   }
-// }
-//
-// setInterval(slider, 2000);
+first(0);

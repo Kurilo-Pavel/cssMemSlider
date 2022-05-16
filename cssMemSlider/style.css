@@ -135,7 +135,7 @@ span {
 @media (max-width: 600px){
   .field{
     grid-template-columns: 1fr;
-    grid-template-rows: 5fr 0.5fr 1fr;
+    grid-template-rows: 5fr 0.5fr 2fr;
   }
   .fieldImg{
     grid-row: 1;
