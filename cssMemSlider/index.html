@@ -2,11 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>cssMemSlider</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class='field'>
+  <input type="radio" id='Ford' name='circle' checked>
+  <input type="radio" id='Ruzvelt' name='circle'>
+  <input type="radio" id='Geits' name='circle'>
+  <input type="radio" id='Einstein' name='circle'>
+
+  <div class=controls>
+    <label for="Ford" class='controlsField'> <span class="circle"></span></label>
+    <label for="Ruzvelt" class='controlsField'> <span class="circle"></span></label>
+    <label for="Geits" class='controlsField'> <span class="circle"></span></label>
+    <label for="Einstein" class='controlsField'> <span class="circle"></span></label>
+  </div>
+
+  <div class="fieldImg">
+    <img src='picture/Генри%20Форд.jpg' alt="Генри Форд" class="Ford">
+    <img src='picture/Теодор%20Рузвельт.jpg' alt="Теодор Рузвельт" class="Ruzvelt">
+    <img src='picture/Билл%20Гейтс.jpg' alt="Билл Гейтс" class="Geits">
+    <img src='picture/Альберт%20Эйнштейн.jpg' alt="Альберт Эйнштейн" class="Einstein">
+  </div>
+
+  <div class='phrase'>
+    <blockquote class='textFord'>
+      "Если вы думаете, что на что-то способны, вы правы; если думаете, что у вас ничего не получится - вы тоже правы."
+    </blockquote>
+    <blockquote class='textRuzvelt'>
+      "Стоит только поверить, что вы можете – и вы уже на полпути к цели."
+    </blockquote>
+    <blockquote class='textGeits'>
+      "Успех – паршивый учитель. Он заставляет умных людей думать, что они не могут проиграть."
+    </blockquote>
+    <blockquote class='textEinstein'>
+      "Вы никогда не сумеете решить возникшую проблему, если сохраните то же мышление и тот же подход, который привел
+      вас к этой проблеме."
+    </blockquote>
+  </div>
+
+</div>
 </body>
-<script type="module" src="script.js"></script>
 </html>
