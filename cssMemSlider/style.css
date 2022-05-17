@@ -17,7 +17,6 @@ input {
   display: grid;
   width: 90%;
   background: #25282A;
-  position: absolute;
   height: 90%;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 5fr 1fr;
@@ -128,7 +127,7 @@ blockquote {
 
 .controlsField:hover .circle {
   background: white;
-  border: 3px solid white;
+  border: 0.2rem solid white;
 }
 
 #Ford:checked ~ .controls .controlsField:nth-child(1) .circle {
@@ -149,7 +148,7 @@ blockquote {
 
 .circle {
   display: inline-block;
-  border: 3px solid dodgerblue;
+  border: 0.2rem solid dodgerblue;
   border-radius: 50%;
   width: 50%;
   height: 50%;
